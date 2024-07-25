@@ -1,0 +1,109 @@
+body {
+    height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.letter {
+    height: 150px;
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 5px 5px 5px rgb(163, 163, 163);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.letter,
+.letter>div {
+    border-radius: 10px;
+}
+
+.flap-top {
+    width: 300px;
+    height: 75px;
+    background-color: #db6eef;
+    clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+    grid-area: 1 / 1 / 2 / 3;
+    z-index: 3;
+    transition: 0.5s;
+}
+
+.right {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(241, 241, 241);
+    clip-path: polygon(100% 0%, 0% 50%, 100% 100%);
+    grid-area: 1 / 2 / 3 / 3;
+    z-index: 3;
+}
+
+.left {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(241, 241, 241);
+    clip-path: polygon(0% 0%, 0% 100%, 100% 50%);
+    grid-area: 1 / 1 / 3 / 2;
+    z-index: 3;
+}
+
+.bottom {
+    width: 300px;
+    height: 75px;
+    background-color: rgb(241, 241, 241);
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    grid-area: 2 / 1 / 3 / 3;
+    z-index: 3;
+}
+
+.message {
+    width: 300px;
+    height: 150px;
+    background-color: rgb(255, 255, 255);
+    z-index: 3;
+    grid-area: 1 / 1 / 3 / 3;
+    transition: 0.5s;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: bolder;
+}
+
+.open {
+    clip-path: polygon(0% 100%, 50% 0%, 100% 100%);
+    transform: translateY(-71.5px);
+}
+
+.message-open {
+    z-index: 5;
+    height: 770px;
+    width: 310px;
+    border: black solid 1px;
+    transform: translateY(-250px) translateX(-10px);
+}
+
+.lined-paper {
+    background-color: white;
+    background-image:
+        linear-gradient(#999 1px, transparent 1px);
+    background-size: 100% 2em;
+    background-position: 0 2em;
+    line-height: 2em;
+    padding: 0 1em;
+    font-family: Arial, sans-serif;
+    text-align: justify;
+}
+
+.lined-paper p {
+    margin: 0;
+    padding: 0 0.5em;
+}
+
+.noTouch {
+    width: 100vw;
+    height: 100vh;
+    z-index: 10;
+    background-color: #ffffff00;
+    position: absolute;
+}
